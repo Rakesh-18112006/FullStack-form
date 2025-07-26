@@ -8,9 +8,10 @@ const userRoutes = require('./routes/userRoutes');
 const app = express();
 
 // Middleware
+const cors = require('cors');
 app.use(cors({
-  origin: '*',           // 👈 allow all domains
-  credentials: false     // 👈 set to false if not using cookies
+  origin: process.env.CLIENT_URL,
+  credentials: true
 }));
 
 app.use(bodyParser.json());
