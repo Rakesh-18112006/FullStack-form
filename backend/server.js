@@ -8,7 +8,10 @@ const userRoutes = require('./routes/userRoutes');
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: 'https://your-vercel-frontend.vercel.app',
+  credentials: true
+}));
 app.use(bodyParser.json());
 
 // Database connection

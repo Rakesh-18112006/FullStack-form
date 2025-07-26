@@ -49,7 +49,7 @@ const FormComponent = () => {
       setSubmitMessage({ text: '', isError: false });
       
       try {
-        const response = await axios.post('http://localhost:3000/api/users', values);
+        const response = await axios.post(`${import.meta.env.VITE_API_URL}/users`, values);
         setSubmitMessage({ text: 'Form submitted successfully!', isError: false });
         formik.resetForm();
       } catch (error) {
