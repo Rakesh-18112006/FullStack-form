@@ -9,7 +9,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: 'https://your-vercel-frontend.vercel.app',
+  origin: process.env.CLIENT_URL,
   credentials: true
 }));
 app.use(bodyParser.json());
